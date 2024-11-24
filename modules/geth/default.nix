@@ -86,10 +86,7 @@ in {
 
               filteredArgs = builtins.filter isNormalArg args;
 
-              network =
-                if cfg.args.network != null
-                then "--${cfg.args.network}"
-                else "";
+              network = "--${cfg.args.network}";
 
               jwtSecret =
                 if cfg.args.authrpc.jwtsecret != null
