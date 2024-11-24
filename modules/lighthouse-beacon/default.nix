@@ -42,7 +42,7 @@ in {
                 [discovery-port]
                 ++ (optionals (!disable-quic) [quic-port]);
               allowedTCPPorts =
-                (optionals disable-quic [quic-port])
+                [port]
                 ++ (optionals http.enable [http.port])
                 ++ (optionals metrics.enable [metrics.port]);
             }

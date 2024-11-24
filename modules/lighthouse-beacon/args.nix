@@ -69,9 +69,16 @@ with lib; {
     '';
   };
 
-  discovery-port = mkOption {
+  port = mkOption {
     type = types.port;
     default = 9000;
+    description = "The port used by libp2p tcp.";
+  };
+
+  discovery-port = mkOption {
+    type = types.port;
+    default = config.args.port;
+    defaultText = literalExpression "args.port";
     description = "The port used by discv5.";
   };
 
